@@ -90,12 +90,12 @@ if uploaded_file is not None and names:
         draw = ImageDraw.Draw(edited_image)
         random_numbers_for_current_image = st.session_state.random_numbers[current_index * len(st.session_state.texts):(current_index + 1) * len(st.session_state.texts)]
         for i, text_item in enumerate(st.session_state.texts):
-            font = ImageFont.truetype("arial.ttf", text_item['font_size'])
+            font = ImageFont.truetype("UID LETTER.ttf", text_item['font_size'])
             draw.text((text_item['x'], text_item['y']), str(random_numbers_for_current_image[i]), font=font, fill="white")
         
         # Add nameTile text
         name_tile_text = names[current_index]
-        font = ImageFont.truetype("arial.ttf", name_font_size)
+        font = ImageFont.truetype("UID LETTER.ttf", name_font_size)
         draw.text((name_x, name_y), name_tile_text, font=font, fill="white")
         
         st.image(edited_image, caption=f'Edited Image {names[current_index]}', use_column_width=True)
@@ -113,10 +113,10 @@ if uploaded_file is not None and names:
                 draw = ImageDraw.Draw(temp_image)
                 random_numbers_for_image = st.session_state.random_numbers[i * len(st.session_state.texts):(i + 1) * len(st.session_state.texts)]
                 for j, text_item in enumerate(st.session_state.texts):
-                    font = ImageFont.truetype("arial.ttf", text_item['font_size'])
+                    font = ImageFont.truetype("UID LETTER.ttf", text_item['font_size'])
                     draw.text((text_item['x'], text_item['y']), str(random_numbers_for_image[j]), font=font, fill="white")
                 # Add nameTile text
-                font = ImageFont.truetype("arial.ttf", name_font_size)
+                font = ImageFont.truetype("UID LETTER.ttf", name_font_size)
                 draw.text((name_x, name_y), name, font=font, fill="white")
                 temp_img_byte_arr = io.BytesIO()
                 temp_image.save(temp_img_byte_arr, format='PNG')
